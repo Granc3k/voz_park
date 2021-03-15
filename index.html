@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Registrace do vozového parku</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="index.js"></script>
+  </head>
+  <body onload="poNacteni()">
+    <center><h1>Registrace do vozového parku</h1></center>
+
+    <div id="div_seznam">
+      <h2>Vozidla</h2>
+     <table>
+        <thead>
+          <th>Výrobce</th>
+          <th>Model</th>
+          <th>Palivo</th>
+          <th>RZ/SPZ</th>
+          <th>Počet míst</th>
+          <th> </th>
+        </thead>
+        <tbody id="tbody_seznam_zadatelu"></tbody>
+      </table>
+
+       <button onclick="pridejZadatele()"><span class="glyphicon glyphicon-plus-sign"></span> Přidat</button>
+    </div>
+   
+    <div id="div_editace">
+      <h2>Žadatel</h2>
+
+      <center><img id="fotka" src="avatarr.png" height="100"><br>
+      <input type="file" id="file_fotka" onchange="ulozFotku()"></center>
+      <br><br>
+
+    <table>
+      <tr><td>Výrobce:</td> <td><input type="text" id="vyrobce"></td></tr>
+      <tr><td>Model:</td> <td><input type="text" id="model"></td></tr>
+      <tr><td>Palivo:</td> <td> 
+        <select id="palivo">
+          <option value="Benzin">Benzin</option>
+          <option value="Nafta">Nafta</option>
+          <option value="Plyn">Plyn</option>
+          <option value="Elektrina">Elektřina</option>
+        </select></td></tr>
+      <tr><td>RZ/SPZ:</td> <td><input type="text" id="spz"></td></tr>
+      <tr><td>Počet míst:</td> <td> 
+        <select id="misto">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select></td></tr>
+    </table>
+      <input type="button" value="Uložit" onclick="ulozZadatele()">
+      <input type="button" value="Storno" onclick="ukazOblast('div_seznam')"><br>
+    </div>
+
+  </body>
+</html>
